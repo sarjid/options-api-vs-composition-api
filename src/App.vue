@@ -1,22 +1,39 @@
 <template >
   <div>
-    <input type="text" placeholder="your name" v-model="name">
-    <h3>your name is: {{ name }}</h3>
+  
+
+    <button @click="increment">Count {{ counter }}</button>
   </div>
 </template>
 
 
 <script setup>
-import {ref} from 'vue';
+import {reactive, ref} from 'vue';
 // export default {
   // data() {
   //   return {
-  //     name: ''
+  //     counter: 0
+  //   }
+  // },
+
+  // methods: {
+  //   increment(){
+  //     this.counter += 1;
   //   }
   // },
 
   // setup() {
-    const name = ref("");
+    const counter = ref(0);
+    const test = reactive(0);
+
+    const increment = () =>{
+      counter.value += 1;
+    };
+    
+
+  
+
+    // return {counter,increment}
 
 
     
